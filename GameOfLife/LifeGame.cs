@@ -10,8 +10,9 @@ namespace GameOfLife
     {
         private Grid grid;
 
-        private const int TILE_SIZE = 32;
-        private const int TICK_RATE = 30;
+        private const int TILE_SIZE = 16;
+        private const int TICK_RATE = 5;
+        private int size = 100;
 
         public override void Load(DependencyContainer dependencies)
         {
@@ -19,11 +20,11 @@ namespace GameOfLife
 
             // randomly generate the grid
             var rand = new Random();
-            bool[][] situation = new bool[10][];
-            for (int y = 0; y < 10; y++)
+            bool[][] situation = new bool[size][];
+            for (int y = 0; y < size; y++)
             {
-                var row = new bool[10];
-                for (int x = 0; x < 10; x++)
+                var row = new bool[size];
+                for (int x = 0; x < size; x++)
                 {
                     row[x] = rand.Next(10) > 4;
                 }
@@ -63,6 +64,7 @@ namespace GameOfLife
         {
             grid.Tick();
 
+            // update the cells
             foreach (IDrawable d in Root)
             {
                 if (d is DrawableCell cell)

@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c947d7d7-8abd-4e87-ac4c-6db135507e37" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameOfLife.Tests/GameOfLife.Tests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameOfLife.Tests/GridTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameOfLife.sln.DotSettings.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameOfLife/DrawableCell.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameOfLife/Grid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameOfLife/LifeGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOfLife/LifeGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfLife/LifeGame.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +23,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/970ee97813de48cdbe960a187c74dc4094a800/70/1b7be6f4/Interop.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,7 +54,7 @@
       <command value="GameOfLife" />
     </option>
   </component>
-  <component name="RunManager" selected=".NET Project.GameOfLife">
+  <component name="RunManager">
     <configuration name="GameOfLife" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -87,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1643001291012</updated>
       <workItem from="1643001291014" duration="7505000" />
+      <workItem from="1643011501977" duration="1852000" />
     </task>
     <servers />
   </component>
@@ -94,7 +91,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
