@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c947d7d7-8abd-4e87-ac4c-6db135507e37" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameOfLife/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfLife/Grid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOfLife.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfLife.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameOfLife/LifeGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfLife/LifeGame.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,9 +24,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/970ee97813de48cdbe960a187c74dc4094a800/70/1b7be6f4/Interop.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -86,6 +83,7 @@
       <workItem from="1643001291014" duration="7505000" />
       <workItem from="1643011501977" duration="1852000" />
       <workItem from="1643194230084" duration="5094000" />
+      <workItem from="1643224996388" duration="2954000" />
     </task>
     <servers />
   </component>
