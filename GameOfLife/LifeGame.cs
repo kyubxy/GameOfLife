@@ -1,7 +1,12 @@
+using System.Drawing;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
+using OpenTK.Windowing.GraphicsLibraryFramework;
 using Yasai;
 using Yasai.Graphics;
+using Yasai.Graphics.Containers;
+using Yasai.Graphics.Text;
+using Yasai.Resources.Stores;
 using Yasai.Structures.DI;
 
 namespace GameOfLife
@@ -11,29 +16,22 @@ namespace GameOfLife
         private Grid grid;
 
         private const int TILE_SIZE = 16;
-        private const int TICK_RATE = 5;
-        private int size = 100;
+        
+        private int size = 90;
+        private bool running;
+        private int tickRate = 5;
+        
+        private Container inst;
+
+        public LifeGame()
+        {
+            grid = pregenerate(true);
+        }
 
         public override void Load(DependencyContainer dependencies)
         {
             base.Load(dependencies);
-
-            // randomly generate the grid
-            var rand = new Random();
-            bool[][] situation = new bool[size][];
-            for (int y = 0; y < size; y++)
-            {
-                var row = new bool[size];
-                for (int x = 0; x < size; x++)
-                {
-                    row[x] = rand.Next(10) > 4;
-                }
-
-                situation[y] = row;
-            }
             
-            grid = new Grid(situation);
-
             // create the cells
             for (int y = 0; y < grid.Height; y++)
             {
@@ -48,6 +46,72 @@ namespace GameOfLife
                     });
                 }
             }
+
+            // text
+            var fonts = dependencies.Resolve<FontStore>();
+            float TEXT_SCALE = 0.25f;
+            float SPACING_Y = 15;
+            int WORD_SPACING = 8;
+            
+            inst = new Container()
+            {
+                Position = new Vector2(10),
+                Items = new IDrawable[]
+                {
+                    // we need better containers NOW
+                    new SpriteText("CONTROLS:", fonts.GetResource(SpriteFont.Segoe))
+                    {
+                        Position = new Vector2(0, SPACING_Y*0),
+                        Colour = Color.White,
+                        CharScale = TEXT_SCALE,
+                        WordSpacing = WORD_SPACING,
+                    },
+                    new SpriteText("Play/Pause: Space", fonts.GetResource(SpriteFont.Segoe))
+                    {
+                        Position = new Vector2(0, SPACING_Y*1),
+                        Colour = Color.White,
+                        CharScale = TEXT_SCALE,
+                        WordSpacing = WORD_SPACING,
+                    },
+                    new SpriteText("Faster: K/L/Up/Right", fonts.GetResource(SpriteFont.Segoe))
+                    {
+                        Position = new Vector2(0, SPACING_Y*2),
+                        Colour = Color.White,
+                        CharScale = TEXT_SCALE,
+                        WordSpacing = WORD_SPACING,
+                    },
+                    new SpriteText("Slower: J/H/Down/Left", fonts.GetResource(SpriteFont.Segoe))
+                    {
+                        Position = new Vector2(0, SPACING_Y*3),
+                        Colour = Color.White,
+                        CharScale = TEXT_SCALE,
+                        WordSpacing = WORD_SPACING,
+                    },
+                    new SpriteText("Step through: Enter (also pauses the simulation)", fonts.GetResource(SpriteFont.Segoe))
+                    {
+                        Position = new Vector2(0, SPACING_Y*4),
+                        Colour = Color.White,
+                        CharScale = TEXT_SCALE,
+                        WordSpacing = WORD_SPACING,
+                    },
+                    new SpriteText("Generate random: R", fonts.GetResource(SpriteFont.Segoe))
+                    {
+                        Position = new Vector2(0, SPACING_Y*5),
+                        Colour = Color.White,
+                        CharScale = TEXT_SCALE,
+                        WordSpacing = WORD_SPACING,
+                    },
+                    new SpriteText("Clear: E", fonts.GetResource(SpriteFont.Segoe))
+                    {
+                        Position = new Vector2(0, SPACING_Y*6),
+                        Colour = Color.White,
+                        CharScale = TEXT_SCALE,
+                        WordSpacing = WORD_SPACING,
+                    }
+                },
+            };
+
+            Root.Add(inst);
         }
 
         private int timer;
@@ -56,15 +120,51 @@ namespace GameOfLife
             base.Update(args);
             timer++; // <- this sucks
 
-            if (timer % TICK_RATE == 0)
+            if (tickRate <= 0)
+                return;
+            
+            if (timer % tickRate == 0 && running)
                 tick();
         }
 
+        /// <summary>
+        /// Update the simulation
+        /// </summary>
         private void tick()
         {
             grid.Tick();
+            updateCells();
+        }
+        
+        /// <summary>
+        /// give a grid which is set to a preset situation
+        /// </summary>
+        /// <param name="empty"></param>
+        /// <param name="probability"></param>
+        /// <returns></returns>
+        private Grid pregenerate(bool empty = false, double probability = 0.4)
+        {
+            var rand = new Random();
+            bool[][] situation = new bool[size][];
+            for (int y = 0; y < size; y++)
+            {
+                var row = new bool[size];
+                if (!empty)
+                {
+                    for (int x = 0; x < size; x++)
+                        row[x] = rand.Next(10) < probability * 10;
+                }
+                situation[y] = row;
+            }
 
-            // update the cells
+            return new Grid(situation);
+        }
+
+        /// <summary>
+        /// Update drawable representation
+        /// </summary>
+        private void updateCells()
+        {
             foreach (IDrawable d in Root)
             {
                 if (d is DrawableCell cell)
@@ -72,6 +172,72 @@ namespace GameOfLife
                     Vector2i pos = cell.Coord;
                     cell.Visible = grid.Situation[pos.Y][pos.X];
                 }
+            }
+        }
+        
+        protected override void MouseDown(MouseButtonEventArgs args)
+        {
+            base.MouseDown(args);
+            if (running)
+                return;
+
+            int s = TILE_SIZE + 2;
+            int x = (int) Math.Floor(MousePosition.X / s);
+            int y = (int) Math.Floor(MousePosition.Y / s);
+            Vector2i mPos = new Vector2i(x, y);
+            bool val = args.Button == MouseButton.Left;
+
+            grid.Situation[mPos.Y][mPos.X] = val;
+            updateCells();
+        }
+
+        protected override void KeyDown(KeyboardKeyEventArgs args)
+        {
+            base.KeyDown(args);
+            switch (args.Key)
+            {
+                // pause
+                case Keys.Space:
+                    running = !running;
+                    break;
+                
+                // faster
+                case Keys.K:
+                case Keys.L:
+                case Keys.Up:
+                case Keys.Right:
+                    tickRate --;
+                    break;
+                
+                // slower
+                case Keys.J:
+                case Keys.H:
+                case Keys.Down:
+                case Keys.Left:
+                    tickRate ++;
+                    break;
+                
+                // step through
+                case Keys.Enter:
+                    running = false;
+                    tick();
+                    break;
+                
+                // random
+                case Keys.R:
+                    if (running)
+                        break;
+                    grid = pregenerate();
+                    updateCells();
+                    break;
+                
+                // empty
+                case Keys.E:
+                    if (running)
+                        break;
+                    grid = pregenerate(true);
+                    updateCells();
+                    break;
             }
         }
     }

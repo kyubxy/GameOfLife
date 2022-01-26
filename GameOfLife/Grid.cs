@@ -46,23 +46,8 @@ namespace GameOfLife
         #region helper functions
         public static bool IsAlive(bool[][] situation, int x, int y)
         {
-            bool ret;
-            int  adj = CheckAdjCells(situation, x, y);
-            
-            if (situation[y][x])
-            {
-                if (adj < 2)
-                    ret = false;
-                else if (adj == 2 || adj == 3)
-                    ret = true;
-                else // adj > 3
-                    ret = false;
-            }
-            else
-            {
-                // man im dead
-                ret = adj == 3;
-            }
+            int adj = CheckAdjCells(situation, x, y);
+            bool ret = situation[y][x] ? adj == 2 || adj == 3 : adj == 3;
 
             return ret;
         }
