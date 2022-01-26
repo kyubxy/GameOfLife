@@ -1,5 +1,5 @@
 # GameOfLife
-![image] (https://i.imgur.com/RozwjMB.png)
+![image](https://i.imgur.com/RozwjMB.png)
 
 Conway's game of life simulation in Yasai
 
