@@ -25,7 +25,7 @@ namespace GameOfLife
 
         public LifeGame()
         {
-            grid = pregenerate(true);
+            grid = generate(true);
         }
 
         public override void Load(DependencyContainer dependencies)
@@ -151,7 +151,7 @@ namespace GameOfLife
         /// <param name="empty"></param>
         /// <param name="probability"></param>
         /// <returns></returns>
-        private Grid pregenerate(bool empty = false, double probability = 0.4)
+        private Grid generate(bool empty = false, double probability = 0.4)
         {
             var rand = new Random();
             bool[][] situation = new bool[size.Y][];
@@ -240,7 +240,7 @@ namespace GameOfLife
                 case Keys.R:
                     if (running)
                         break;
-                    grid = pregenerate();
+                    grid = generate();
                     updateCells();
                     break;
                 
@@ -248,7 +248,7 @@ namespace GameOfLife
                 case Keys.E:
                     if (running)
                         break;
-                    grid = pregenerate(true);
+                    grid = generate(true);
                     updateCells();
                     break;
             }
