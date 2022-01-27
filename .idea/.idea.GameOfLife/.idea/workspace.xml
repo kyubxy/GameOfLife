@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c947d7d7-8abd-4e87-ac4c-6db135507e37" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameOfLife.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfLife.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOfLife/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfLife/Grid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameOfLife/LifeGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfLife/LifeGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOfLife/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfLife/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,10 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/04a85421370d4abcb8998579a565acfd445600/6b/738b3d5c/BindingsBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameOfLife/LifeGame.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -41,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.04804805" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.038748138" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Yasai/Yasai/Yasai.csproj" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -83,7 +88,8 @@
       <workItem from="1643001291014" duration="7505000" />
       <workItem from="1643011501977" duration="1852000" />
       <workItem from="1643194230084" duration="5094000" />
-      <workItem from="1643224996388" duration="2954000" />
+      <workItem from="1643224996388" duration="4758000" />
+      <workItem from="1643246714154" duration="2802000" />
     </task>
     <servers />
   </component>

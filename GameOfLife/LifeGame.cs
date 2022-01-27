@@ -16,8 +16,8 @@ namespace GameOfLife
         private Grid grid;
 
         private const int TILE_SIZE = 16;
-        
-        private int size = 90;
+
+        private Vector2i size = new (110, 70);
         private bool running;
         private int tickRate = 5;
         
@@ -31,6 +31,8 @@ namespace GameOfLife
         public override void Load(DependencyContainer dependencies)
         {
             base.Load(dependencies);
+            
+            BackgroundColor = Color.Black;
             
             // create the cells
             for (int y = 0; y < grid.Height; y++)
@@ -152,13 +154,13 @@ namespace GameOfLife
         private Grid pregenerate(bool empty = false, double probability = 0.4)
         {
             var rand = new Random();
-            bool[][] situation = new bool[size][];
-            for (int y = 0; y < size; y++)
+            bool[][] situation = new bool[size.Y][];
+            for (int y = 0; y < size.Y; y++)
             {
-                var row = new bool[size];
+                var row = new bool[size.X];
                 if (!empty)
                 {
-                    for (int x = 0; x < size; x++)
+                    for (int x = 0; x < size.X; x++)
                         row[x] = rand.Next(10) < probability * 10;
                 }
                 situation[y] = row;
@@ -193,6 +195,10 @@ namespace GameOfLife
             int y = (int) Math.Floor(MousePosition.Y / s);
             Vector2i mPos = new Vector2i(x, y);
             bool val = args.Button == MouseButton.Left;
+
+            // keep in bounds
+            if (mPos.X > grid.Width || mPos.Y > grid.Height)
+                return;
 
             grid.Situation[mPos.Y][mPos.X] = val;
             updateCells();

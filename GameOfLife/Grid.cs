@@ -16,7 +16,7 @@ namespace GameOfLife
         {
             var (w, h) = GetDimensions(Situation);
             bool[][] _situation = new bool[h][];
-            for (int i = 0; i < w; i++)
+            for (int i = 0; i < h; i++)
                 _situation[i] = new bool[w];
             
             for (int y = 0; y < h; y++)
