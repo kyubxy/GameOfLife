@@ -61,56 +61,56 @@ namespace GameOfLife
                 Items = new IDrawable[]
                 {
                     // we need better containers NOW
-                    new SpriteText("CONTROLS:", fonts.GetResource(SpriteFont.Segoe_Small))
+                    new SpriteText("CONTROLS:", fonts.GetResource(SpriteFont.SegoeSmall))
                     {
                         Position = new Vector2(0, SPACING_Y*0),
                         Colour = Color.White,
                         CharScale = TEXT_SCALE,
                         WordSpacing = WORD_SPACING,
                     },
-                    new SpriteText("Play/Pause: Space", fonts.GetResource(SpriteFont.Segoe_Small))
+                    new SpriteText("Play/Pause: Space", fonts.GetResource(SpriteFont.SegoeSmall))
                     {
                         Position = new Vector2(0, SPACING_Y*1),
                         Colour = Color.White,
                         CharScale = TEXT_SCALE,
                         WordSpacing = WORD_SPACING,
                     },
-                    new SpriteText("Faster: K/L/Up/Right", fonts.GetResource(SpriteFont.Segoe_Small))
+                    new SpriteText("Faster: K/L/Up/Right", fonts.GetResource(SpriteFont.SegoeSmall))
                     {
                         Position = new Vector2(0, SPACING_Y*2),
                         Colour = Color.White,
                         CharScale = TEXT_SCALE,
                         WordSpacing = WORD_SPACING,
                     },
-                    new SpriteText("Slower: J/H/Down/Left", fonts.GetResource(SpriteFont.Segoe_Small))
+                    new SpriteText("Slower: J/H/Down/Left", fonts.GetResource(SpriteFont.SegoeSmall))
                     {
                         Position = new Vector2(0, SPACING_Y*3),
                         Colour = Color.White,
                         CharScale = TEXT_SCALE,
                         WordSpacing = WORD_SPACING,
                     },
-                    new SpriteText("Step through: Enter (also pauses the simulation)", fonts.GetResource(SpriteFont.Segoe_Small))
+                    new SpriteText("Step through: Enter (also pauses the simulation)", fonts.GetResource(SpriteFont.SegoeSmall))
                     {
                         Position = new Vector2(0, SPACING_Y*4),
                         Colour = Color.White,
                         CharScale = TEXT_SCALE,
                         WordSpacing = WORD_SPACING,
                     },
-                    new SpriteText("Generate random: R", fonts.GetResource(SpriteFont.Segoe_Small))
+                    new SpriteText("Generate random: R", fonts.GetResource(SpriteFont.SegoeSmall))
                     {
                         Position = new Vector2(0, SPACING_Y*5),
                         Colour = Color.White,
                         CharScale = TEXT_SCALE,
                         WordSpacing = WORD_SPACING,
                     },
-                    new SpriteText("Clear: E", fonts.GetResource(SpriteFont.Segoe_Small))
+                    new SpriteText("Clear: E", fonts.GetResource(SpriteFont.SegoeSmall))
                     {
                         Position = new Vector2(0, SPACING_Y*6),
                         Colour = Color.White,
                         CharScale = TEXT_SCALE,
                         WordSpacing = WORD_SPACING,
                     },
-                    new SpriteText("Left click to place, Right click to remove", fonts.GetResource(SpriteFont.Segoe_Small))
+                    new SpriteText("Left click to place, Right click to remove", fonts.GetResource(SpriteFont.SegoeSmall))
                     {
                         Position = new Vector2(0, SPACING_Y*8),
                         Colour = Color.White,
