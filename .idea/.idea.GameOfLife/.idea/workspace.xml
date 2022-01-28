@@ -4,7 +4,10 @@
     <projectFile>GameOfLife/GameOfLife.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c947d7d7-8abd-4e87-ac4c-6db135507e37" name="Changes" comment="" />
+    <list default="true" id="c947d7d7-8abd-4e87-ac4c-6db135507e37" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameOfLife/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOfLife/LifeGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameOfLife/LifeGame.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.04804805" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.039039038" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Yasai/Yasai/Yasai.csproj" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
