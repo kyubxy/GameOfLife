@@ -45,7 +45,7 @@ namespace GameOfLife
             }
         }
 
-        private float tr = 0.05f;
+        private float tr = 0.1f;
         private float tickRate
         {
             get => tr;
